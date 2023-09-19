@@ -29,6 +29,9 @@ function resetGame() {
 function startGameEasy(){
     resetGame();
     
+    generateUniqueRandomBombs()
+    console.log(generateUniqueRandomBombs())
+    
       for (i = 1; i < 101; i++) {
         const square = createSquare(i);
         container.append(square);
@@ -38,6 +41,9 @@ function startGameEasy(){
     
 
 function startGameMedium(){
+  resetGame();
+
+  generateUniqueRandomBombs()
 
     for(i = 1; i < 82; i++) {
       const square = createSquareMedium(i);
@@ -47,6 +53,9 @@ function startGameMedium(){
   }
 
   function startGameHard(){
+    resetGame();
+
+    generateUniqueRandomBombs()
 
     for(i = 1; i < 50; i++) {
       const square = createSquareHard(i);
@@ -95,7 +104,7 @@ function createSquareHard(index) {
 
 function generateUniqueRandomBombs() {
   const min = 1;
-  const max = 16;
+  const max = 100;
   const bombsList = [];
 
   while (bombsList.length < 16) {
@@ -108,7 +117,7 @@ function generateUniqueRandomBombs() {
   return bombsList;
 }
 
-// 2. creo una funzione per il quadrato in modo che non possa essere cliccato nuovamente
+// 2. creo una funzione per il quadrato in modo che non possa essere cliccato nuovamente 
 
 function hendleClickCell() {
   this.classList.add("active");
