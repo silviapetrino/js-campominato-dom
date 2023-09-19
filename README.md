@@ -39,4 +39,4 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 0. creo una classe Css bomba a cui dò un colore.
 1. creo una funzione per generare la bomba in un numero da 1 a 16 e inserisco un ciclo che gira finché non sono tutte uscite;
 
-2. lavoro sul click del quadrato
+2. creo una funzione per il quadrato in modo che non possa essere cliccato nuovamente

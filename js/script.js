@@ -27,27 +27,22 @@ function resetGame() {
 
 
 function startGameEasy(){
-    resetGame()
-
-    for(i = 1; i < 101; i++) {
-      const square = createSquare(i);
-      container.append(square);
-      square.addEventListener("click", function(){
-      this.classList.toggle("active");
-      console.log(this.id)
-      })
+    resetGame();
+    
+      for (i = 1; i < 101; i++) {
+        const square = createSquare(i);
+        container.append(square);
+        square.addEventListener("click", hendleClickCell);
+      }
     }
-  }
+    
 
 function startGameMedium(){
 
     for(i = 1; i < 82; i++) {
       const square = createSquareMedium(i);
       container.append(square);
-      square.addEventListener("click", function(){
-      this.classList.toggle("active");
-      console.log(this.id);
-      })
+      square.addEventListener("click", hendleClickCell);
     } 
   }
 
@@ -56,10 +51,7 @@ function startGameMedium(){
     for(i = 1; i < 50; i++) {
       const square = createSquareHard(i);
       container.append(square);
-      square.addEventListener("click", function(){
-      this.classList.toggle("active");
-      console.log(this.id);
-      })
+      square.addEventListener("click", hendleClickCell);
     } 
   }
 
@@ -119,3 +111,10 @@ function randomBomb() {
  
 }
 
+// 2. creo una funzione per il quadrato in modo che non possa essere cliccato nuovamente
+
+function hendleClickCell() {
+  this.classList.add("active");
+  console.log(this.id);
+  this.removeEventListener("click", hendleClickCell);
+}
