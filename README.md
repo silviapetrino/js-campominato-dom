@@ -35,10 +35,11 @@ In seguito l’utente clicca su una cella: se il numero è presente nella lista 
 La partita termina quando il giocatore clicca su una bomba o quando raggiunge il numero massimo possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non sono bombe).
 Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba, fare visulaizzare tutte le bombe in gliglia e congelare la griglia.
 
+0. creo nuove classi css per le bombe;
 
-0. creo una classe Css bomba a cui dò un colore.
-1. creo una funzione per generare la bomba in un numero da 1 a 16 e inserisco un ciclo che gira finché non sono tutte uscite;
+1. Creo una funzione per generare  un numero da 1 a 16: inserisco un ciclo che gira finché non sono usciti tutti i numeri, che aggiungo man mano alla lista bombsList;
 
-2. creo una funzione per il quadrato in modo che non possa essere cliccato nuovamente;
+2. creo una funzione per il click in modo che non possa essere cliccato nuovamente un elemento;
 
-3. all'avvio del gioco, genero casualmente le bombe.
+3. aggiungo l'argomento isBomb alla funzione che genera il quadrato: se il quadrato è una bomba, aggiungo la classe corrispondente.
+

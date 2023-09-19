@@ -26,51 +26,68 @@ function resetGame() {
 }
 
 
-function startGameEasy(){
-    resetGame();
-    
-    generateUniqueRandomBombs()
-    console.log(generateUniqueRandomBombs())
-    
-      for (i = 1; i < 101; i++) {
-        const square = createSquare(i);
-        container.append(square);
-        square.addEventListener("click", hendleClickCell);
-      }
-    }
-    
-
-function startGameMedium(){
+function startGameEasy() {
   resetGame();
 
-  generateUniqueRandomBombs()
+  const bombsList = generateUniqueRandomBombs();
+  console.log(bombsList);
 
-    for(i = 1; i < 82; i++) {
-      const square = createSquareMedium(i);
-      container.append(square);
+  for (i = 1; i < 101; i++) {
+    const isBomb = bombsList.includes(i);
+    const square = createSquare(i, isBomb);
+    container.append(square);
+
+    if (!isBomb) {
       square.addEventListener("click", hendleClickCell);
-    } 
+    } else {
+      square.classList.add("bomb");
+      square.addEventListener("click", gameOver);
+    }
   }
+}
 
-  function startGameHard(){
-    resetGame();
+function gameOver() {
+  alert("Hai perso!");
+}
 
-    generateUniqueRandomBombs()
+// function startGameMedium(){
+//   resetGame();
 
-    for(i = 1; i < 50; i++) {
-      const square = createSquareHard(i);
-      container.append(square);
-      square.addEventListener("click", hendleClickCell);
-    } 
-  }
+//   generateUniqueRandomBombs()
+
+//     for(i = 1; i < 82; i++) {
+//       const square = createSquareMedium(i);
+//       container.append(square);
+//       square.addEventListener("click", hendleClickCell);
+//     } 
+//   }
+
+//   function startGameHard(){
+//     resetGame();
+
+//     generateUniqueRandomBombs()
+
+//     for(i = 1; i < 50; i++) {
+//       const square = createSquareHard(i);
+//       container.append(square);
+//       square.addEventListener("click", hendleClickCell);
+//     } 
+//   }
 
 
 
   // i quadrati sono creati in base alla difficoltà del gioco scelta 
 
-function createSquare(index) {
+// 3. aggiungo l'argomento isBomb: se il quadrato è na bomba, aggiungi la classe bomba
+
+function createSquare(index, isBomb) {
   const newSquare = document.createElement("div");
   newSquare.classList.add("square-easy");
+
+  if (isBomb) {
+    newSquare.classList.add("bomb");
+  }
+
   newSquare.innerHTML = "";
   newSquare.id = index;
   return newSquare;
@@ -96,8 +113,6 @@ function createSquareHard(index) {
 
 
 
-
-
 // 1. funzione per generare  un numero da 1 a 16: inserisco un ciclo che gira finché non sono usciti tutti i numeri, che aggiungo man mano alla lista;
 
 
@@ -117,7 +132,7 @@ function generateUniqueRandomBombs() {
   return bombsList;
 }
 
-// 2. creo una funzione per il quadrato in modo che non possa essere cliccato nuovamente 
+// 2. creo una funzione per il quadrato in modo che non possa essere cliccato nuovamente
 
 function hendleClickCell() {
   this.classList.add("active");
