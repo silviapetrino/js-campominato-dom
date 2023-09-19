@@ -54,7 +54,7 @@ function gameOver() {
 // function startGameMedium(){
 //   resetGame();
 
-//   generateUniqueRandomBombs()
+//   
 
 //     for(i = 1; i < 82; i++) {
 //       const square = createSquareMedium(i);
@@ -66,7 +66,7 @@ function gameOver() {
 //   function startGameHard(){
 //     resetGame();
 
-//     generateUniqueRandomBombs()
+//    
 
 //     for(i = 1; i < 50; i++) {
 //       const square = createSquareHard(i);
