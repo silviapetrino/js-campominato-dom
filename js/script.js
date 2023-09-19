@@ -108,18 +108,28 @@ function createSquare(index, isBomb) {
 }
 
 
-function createSquareMedium(index) {
+function createSquareMedium(index, isBomb) {
   const newSquare = document.createElement("div");
   newSquare.classList.add("square-medium");
+
+  if (isBomb) {
+    newSquare.classList.add("bomb");
+  }
+
   newSquare.innerHTML = "";
   newSquare.id = index;
   return newSquare;
 }
 
 
-function createSquareHard(index) {
+function createSquareHard(index, isBomb) {
   const newSquare = document.createElement("div");
   newSquare.classList.add("square-hard");
+
+  if (isBomb) {
+    newSquare.classList.add("bomb");
+  }
+
   newSquare.innerHTML = "";
   newSquare.id = index;
   return newSquare;
