@@ -93,22 +93,19 @@ function createSquareHard(index) {
 
 
 
-function randomBomb() {
-
-  const min = 0;
+function generateUniqueRandomBombs() {
+  const min = 1;
   const max = 16;
   const bombsList = [];
 
-  let numeroCasuale;
+  while (bombsList.length < 16) {
+    const numeroCasuale = Math.floor(Math.random() * (max - min + 1)) + min;
+    if (!bombsList.includes(numeroCasuale)) {
+      bombsList.push(numeroCasuale);
+    }
+  }
 
-  do {
-    numeroCasuale = Math.floor(Math.random() * (max - min + 1)) + min;
-  } while (bombsList.includes(numeroCasuale));
-
-  bombsList.push(numeroCasuale);
-
-  return bombsList; 
- 
+  return bombsList;
 }
 
 // 2. creo una funzione per il quadrato in modo che non possa essere cliccato nuovamente
