@@ -52,7 +52,7 @@ body  {
   background-color: rgb(43, 116, 226);
 }
 
-.bomb.active {
+.activeted {
   background-color: red;
 }
 
@@ -63,4 +63,5 @@ body  {
   position: absolute;
   top: 0;
   left: 0;
+
 }

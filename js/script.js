@@ -48,7 +48,7 @@ function startGameEasy() {
 }
 
 function gameOver() {
-  container.innerHTML = `<div id="gameover">Hai perso!</div>`
+  container.innerHTML = `<div id="gameover">Hai perso!</div>`;
 }
 
 // function startGameMedium(){
