@@ -13,7 +13,6 @@ body  {
   height: 600px;
   margin: 40px auto;
   position: relative;
-
 }
 
 .square-easy.active,
@@ -55,4 +54,13 @@ body  {
 
 .bomb.active {
   background-color: red;
+}
+
+#gameover {
+  color: rgb(0, 0, 0);
+  padding: 2rem;
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

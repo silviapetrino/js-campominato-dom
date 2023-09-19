@@ -2,6 +2,7 @@
 const button = document.getElementById("start-game");
 const container = document.querySelector(".container_sp");
 const gameChoise = document.getElementById("game-difficult");
+const gameOverMessage = document.getElementById("gameover");
 
 
   // al click del bottone la scelta di gioco selezionata attiva la funzione corrispondente
@@ -47,7 +48,7 @@ function startGameEasy() {
 }
 
 function gameOver() {
-  alert("Hai perso!");
+  container.innerHTML = `<div id="gameover">Hai perso!</div>`
 }
 
 // function startGameMedium(){
