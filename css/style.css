@@ -1,0 +1,52 @@
+body  {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(196, 227, 253);
+}
+
+
+.container_sp {
+  background-color: goldenrod;
+  width: 600px;
+  height: 600px;
+  margin: 40px auto;
+}
+
+.square-easy.active,
+.square-medium.active,
+.square-hard.active {
+  background-color: rgb(174, 116, 228);
+}
+
+.square-easy,
+.square-medium,
+.square-hard {
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(251, 255, 0);
+  cursor: pointer;
+}
+
+.square-easy {
+  width: calc(100% / 10);
+  background-color: rgb(43, 116, 226);
+}
+
+
+.square-medium {
+  width: calc(100% / 9);
+  height: calc(100 / 9);
+  background-color: rgb(43, 86, 226);
+}
+
+.square-hard {
+  width: calc(100% / 7);
+  height: calc(100 / 7);
+  background-color: rgb(245, 0, 225);
+}
+
+.bomb {
+  background-color: red;
+}
+
