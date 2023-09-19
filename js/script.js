@@ -180,5 +180,6 @@ function gameOver() {
     bombSquares[i].classList.add("activeted");
   }
 
+
 }
 
