@@ -43,3 +43,4 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 
 3. aggiungo l'argomento isBomb alla funzione che genera il quadrato: se il quadrato è una bomba, aggiungo la classe corrispondente.
 
+4. Creo una funzione gameOver usando la classe activated per colorare la bomba.

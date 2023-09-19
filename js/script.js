@@ -30,7 +30,7 @@ function resetGame() {
 function startGameEasy() {
   resetGame();
 
-  const bombsList = generateUniqueRandomBombs();
+  const bombsList = generateUniqueRandomBombs(1, 100);
   console.log(bombsList);
 
   for (i = 1; i < 101; i++) {
@@ -44,36 +44,49 @@ function startGameEasy() {
       square.classList.add("bomb");
       square.addEventListener("click", gameOver);
     }
+    }
+}
+
+
+function startGameMedium() {
+  resetGame();
+
+  const bombsList = generateUniqueRandomBombs(1, 81);
+  console.log(bombsList);
+
+  for (i = 1; i < 82; i++) {
+    const isBomb = bombsList.includes(i);
+    const square = createSquareMedium(i, isBomb);
+    container.append(square);
+
+    if (!isBomb) {
+      square.addEventListener("click", hendleClickCell);
+    } else {
+      square.classList.add("bomb");
+      square.addEventListener("click", gameOver);
+    }
+    }
+}
+
+  function startGameHard(){
+    resetGame();
+  
+    const bombsList = generateUniqueRandomBombs(1, 49);
+    console.log(bombsList);
+  
+    for (i = 1; i < 50; i++) {
+      const isBomb = bombsList.includes(i);
+      const square = createSquareHard(i, isBomb);
+      container.append(square);
+  
+      if (!isBomb) {
+        square.addEventListener("click", hendleClickCell);
+      } else {
+        square.classList.add("bomb");
+        square.addEventListener("click", gameOver);
+      }
+      }
   }
-}
-
-function gameOver() {
-  container.innerHTML = `<div id="gameover">Hai perso!</div>`;
-}
-
-// function startGameMedium(){
-//   resetGame();
-
-//   
-
-//     for(i = 1; i < 82; i++) {
-//       const square = createSquareMedium(i);
-//       container.append(square);
-//       square.addEventListener("click", hendleClickCell);
-//     } 
-//   }
-
-//   function startGameHard(){
-//     resetGame();
-
-//    
-
-//     for(i = 1; i < 50; i++) {
-//       const square = createSquareHard(i);
-//       container.append(square);
-//       square.addEventListener("click", hendleClickCell);
-//     } 
-//   }
 
 
 
@@ -116,11 +129,13 @@ function createSquareHard(index) {
 
 // 1. funzione per generare  un numero da 1 a 16: inserisco un ciclo che gira finché non sono usciti tutti i numeri, che aggiungo man mano alla lista;
 
-
-
-function generateUniqueRandomBombs() {
-  const min = 1;
-  const max = 100;
+/**
+ * 
+ * @param {number}  
+ * @param {number}  
+ * 
+ */
+function generateUniqueRandomBombs(min, max) {
   const bombsList = [];
 
   while (bombsList.length < 16) {
@@ -133,10 +148,25 @@ function generateUniqueRandomBombs() {
   return bombsList;
 }
 
-// 2. creo una funzione per il quadrato in modo che non possa essere cliccato nuovamente
+
+
+// 2. creo una funzione per un elemento in modo che non possa essere cliccato nuovamente
 
 function hendleClickCell() {
   this.classList.add("active");
   console.log(this.id);
   this.removeEventListener("click", hendleClickCell);
+}
+
+
+
+// 4. gameOver
+
+function gameOver() {
+  const bombSquares = document.querySelectorAll(".bomb");
+  const numBombSquares = bombSquares.length;
+  
+  for (let i = 0; i < numBombSquares; i++) {
+    bombSquares[i].classList.add("activeted");
+  }
 }
