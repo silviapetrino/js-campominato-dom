@@ -179,4 +179,6 @@ function gameOver() {
   for (let i = 0; i < numBombSquares; i++) {
     bombSquares[i].classList.add("activeted");
   }
+
 }
+
