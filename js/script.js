@@ -31,7 +31,6 @@ function startGameEasy() {
   resetGame();
 
   const bombsList = generateUniqueRandomBombs(1, 100);
-  console.log(bombsList);
 
   for (i = 1; i < 101; i++) {
     const isBomb = bombsList.includes(i);
@@ -52,7 +51,6 @@ function startGameMedium() {
   resetGame();
 
   const bombsList = generateUniqueRandomBombs(1, 81);
-  console.log(bombsList);
 
   for (i = 1; i < 82; i++) {
     const isBomb = bombsList.includes(i);
@@ -72,7 +70,6 @@ function startGameMedium() {
     resetGame();
   
     const bombsList = generateUniqueRandomBombs(1, 49);
-    console.log(bombsList);
   
     for (i = 1; i < 50; i++) {
       const isBomb = bombsList.includes(i);
@@ -179,7 +176,6 @@ function gameOver() {
   for (let i = 0; i < numBombSquares; i++) {
     bombSquares[i].classList.add("activeted");
   }
-
 
 }
 
